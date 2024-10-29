@@ -5,9 +5,9 @@ productLink: "/ssl/"
 productArea: Core platform
 productAreaLink: /fundamentals/reference/changelog/performance/
 entries:
-  - publish_date: "2024-10-23 (TBC)"
-    title: SSL.com available with ACM and SSL for SaaS for all customers
-    description: SSL.com is one of the [certificate authorities](/ssl/reference/certificate-authorities/) that Cloudflare partners with. SSL.com is now available as an option to all customers with Advanced Certificate Manager (ACM) or SSL for SaaS. Refer to our [reference documentation](/ssl/reference/certificate-authorities/#sslcom) for details.
-  - publish_date: "2024-10-18 (TBC)"
+  - publish_date: "2024-10-18"
     title: New cloudflare_branding flag allows hostnames with over 64 characters for all CAs
     description: To order certificates for hostnames longer than 64 characters, customers can now use the `cloudflare_branding` flag when ordering a certificate via [API](/api/operations/certificate-packs-order-advanced-certificate-manager-certificate-pack). Setting `cloudflare_branding` to `true` will cause `sni.cloudflaressl.com` to be used as the common name, while the long hostname is added as part of the subject alternative name (SAN).
+  - publish_date: "2024-09-19"
+    title: SSL.com available with ACM and SSL for SaaS for all customers
+    description: SSL.com is one of the [certificate authorities](/ssl/reference/certificate-authorities/) that Cloudflare partners with. SSL.com is now available as an option to all customers with Advanced Certificate Manager (ACM) or SSL for SaaS. Refer to our [reference documentation](/ssl/reference/certificate-authorities/#sslcom) for details.
