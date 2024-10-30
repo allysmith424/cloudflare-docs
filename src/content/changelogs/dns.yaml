@@ -13,4 +13,4 @@ entries:
       - Automatically quoted TXT content upon save if no quotes exist in the record content field.
   - publish_date: "2024-10-07"
     title: API support for per-record CNAME flattening
-    description: Paid zones now have the option to flatten specific CNAME records. When using the API, specify the setting `cname_flatten` as `true`or `false`. Refer to the [documentation](/dns/cname-flattening/set-up-cname-flattening/#per-record) for details.
+    description: Paid zones now have the option to flatten specific CNAME records. When using the API, specify the setting `cname_flatten` as `true` or `false`. Refer to the [documentation](/dns/cname-flattening/set-up-cname-flattening/#per-record) for details.
