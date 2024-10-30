@@ -120,7 +120,7 @@ You can periodically check the service binding status using the [List Service Bi
 
 ## 3. Create address maps
 
-Once you have configured your IPs to have CDN service, you can use <GlossaryTooltip term="address map" link="/byoip/address-maps/">address maps</GlossaryTooltip> to specify which IPs should be used by Cloudflare in DNS responses when a record is [proxied](/dns/manage-dns-records/reference/proxied-dns-records/#proxied-records).
+Once you have configured your IPs to have CDN service, you can use <GlossaryTooltip term="address map" link="/byoip/address-maps/">address maps</GlossaryTooltip> to specify which IPs should be used by Cloudflare in DNS responses when a record is <GlossaryTooltip term="proxy status" link="/dns/manage-dns-records/reference/proxied-dns-records/#proxied-records">proxied</GlossaryTooltip>.
 
 You can choose between two different scopes:
 
@@ -163,8 +163,8 @@ To create a DNS record in the dashboard:
 1.  Log in to the [Cloudflare dashboard](https://dash.cloudflare.com/login) and select an account and domain.
 2.  Go to **DNS** > **Records**.
 3.  Select **Add record**.
-4.  Choose an address (`A`/`AAAA`) record [**Type**](/dns/manage-dns-records/reference/dns-record-types/).
-5.  Complete the required fields, indicating an IP address that has CDN service binding and setting the proxy status to **proxied**.
+4.  Choose an address (`A`/`AAAA`) [record type](/dns/manage-dns-records/reference/dns-record-types/).
+5.  Complete the required fields, setting the **Proxy status** to **proxied**.
 6.  Select **Save**.
 
 </TabItem>
@@ -197,6 +197,18 @@ At this point, if an address map for a zone `example.com` specifies that Cloudfl
     * Directly over the Internet in a Magic Transit direct server return model
     * Back through the Magic GRE tunnel(s) in a Magic Transit egress model
 4. As the HTTP response egresses the Cloudflare network back to the client side, the source IP address of the response becomes `203.0.113.100` (the IP address that the HTTP request originally landed on).
+
+</Details>
+
+Having the same IP address as ingress IP (defined in the address map) and origin IP (listed in the DNS record) will not cause any loops.
+
+<Details header="Example" >
+
+Assuming `203.0.113.100` was also the origin IP, the DNS record would look like the following:
+
+| Type | Name | IP address | Proxy status | TTL |
+| --- | --- | --- | --- | --- |
+| `A` | `www` | `203.0.113.100` | `Proxied` | `Auto` |
 
 </Details>
 
